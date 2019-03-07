@@ -15,6 +15,7 @@ describe('Setting Sail', () => {
   let rowBoat;
   test('Ship has to leave a port to set sail', () => {
     rowBoat = new Ship(jest.fn(), jest.fn()); // name is Dummy here.
-    expect(rowBoat.sail('majorca')).toBe('Arrived at majorca, you have docked safely.');
+    expect(rowBoat.setSail('majorca')).toBe('Arrived at majorca, you have docked safely.');
+    expect(rowBoat.startingPort).toBeFalsy();
   });
 });
