@@ -1,4 +1,9 @@
-
 {
-"extends": "mcr-codes"
+  "rules": {
+    "linebreak-style":0,
+    "func-names": 0
+  },
+  "extends": [
+    "mcr-codes"
+  ]
 }
