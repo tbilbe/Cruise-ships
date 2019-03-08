@@ -10,6 +10,10 @@ Ship.prototype.setSail = function (sailTo) {
   return `Arrived at ${this.port}, you have docked safely.`;
 };
 
+function Port(name) {
+  this.name = name;
+}
+
 module.exports = {
-  Ship,
+  Ship, Port,
 };
