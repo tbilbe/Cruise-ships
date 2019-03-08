@@ -6,3 +6,7 @@ Further OOP - building cruise ships and stuff!
 ## Testing Framwork
 
 JEST
+
+## Author
+
+Tom Bilbe
