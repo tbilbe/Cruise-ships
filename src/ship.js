@@ -1,7 +1,5 @@
-function Ship(name, startingPort) {
-  this.name = `HMS ${name}`;
-  this.startingPort = startingPort;
-  this.port = null;
+function Ship(currentPort) {
+  this.currentPort = currentPort;
 }
 
 Ship.prototype.setSail = function (sailTo) {
@@ -10,10 +8,11 @@ Ship.prototype.setSail = function (sailTo) {
   return `Arrived at ${this.port}, you have docked safely.`;
 };
 
-function Port(name) {
-  this.name = name;
-}
+Ship.prototype.dock = function (port) {
+  this.port = port;
+};
+
 
 module.exports = {
-  Ship, Port,
+  Ship,
 };
