@@ -6,3 +6,6 @@ Further OOP - building cruise ships and stuff!
 ## Testing Framwork
 
 JEST
+
+## Utilising OOP and SOLID principles 
+
