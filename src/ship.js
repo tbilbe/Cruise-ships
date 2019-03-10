@@ -1,9 +1,8 @@
-function Ship(currentPort) {
-  this.currentPort = currentPort;
+function Ship(port) {
+  this.currentPort = port;
 }
 
 Ship.prototype.setSail = function (sailTo) {
-  this.startingPort = null;
   this.port = sailTo;
   return `Arrived at ${this.port}, you have docked safely.`;
 };
