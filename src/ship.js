@@ -3,6 +3,7 @@ function Ship(port) {
 }
 
 Ship.prototype.setSail = function (sailTo) {
+  this.currentPort = false;
   this.port = sailTo;
   return `Arrived at ${this.port}, you have docked safely.`;
 };

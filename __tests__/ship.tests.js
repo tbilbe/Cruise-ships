@@ -34,3 +34,15 @@ describe('Ships can dock at different Ports', () => {
     expect(bigBoat.currentPort).toBe(port2);
   });
 });
+
+describe('A ship gets added to a port when instantiated', () => {
+  let portOfDover, bigShip, travelLog;
+  beforeAll(() => {
+    portOfDover = new Port('Dover');
+    travelLog = new shipsLog([portOfDover]);
+    bigShip = new Ship(travelLog);
+  });
+  test('the travel log shows the port on instantiation', () => {
+
+  });
+});
