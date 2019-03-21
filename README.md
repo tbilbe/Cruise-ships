@@ -9,3 +9,6 @@ JEST
 
 ## :boat: Utilising OOP and SOLID principles :sailboat:
 
+## Author
+
+Tom Bilbe
