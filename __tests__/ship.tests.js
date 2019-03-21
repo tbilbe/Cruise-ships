@@ -11,7 +11,7 @@ describe('A ship', () => {
     port = { addShip: jest.fn(), removeShip: jest.fn() };
     mockPort = { ...port, name: 'mockDover', ships: [] };
     mockCalais = { ...port, name: 'mockCalais', ships: [] };
-    itinerary = new Itinerary([mockPort, mockCalais]);
+    itinerary = { ports: [mockPort, mockCalais] };
     ship = new Ship(itinerary);
     rowBoat = new Ship(itinerary);
   });
@@ -33,30 +33,8 @@ describe('A ship', () => {
     expect(port.addShip).toHaveBeenCalledWith(rowBoat);
   });
   test('Ships can dock at different Ports', () => {
-
-  });
-
-
-  xdescribe('', () => {
-    let port1, port2, bigBoat;
-    test('Ships can dock at different Ports', () => {
-      port1 = new Port('Dover');
-      port2 = new Port('Calais');
-      itinerary = new Itinerary([port1, port2]);
-      bigBoat = new Ship(itinerary);
-      bigBoat.setSail();
-      bigBoat.dock();
-    });
-  });
-  xdescribe('A ship gets added to a port when instantiated', () => {
-    let portOfDover, bigShip, travelLog;
-    beforeAll(() => {
-      portOfDover = new Port('Dover');
-      travelLog = new Itinerary([portOfDover]);
-      bigShip = new Ship(travelLog);
-    });
-    test('the travel log shows the port on instantiation', () => {
-      expect(portOfDover.ships).toContain(bigShip);
-    });
+    rowBoat.setSail();
+    rowBoat.dock();
+    expect(port.removeShip).toHaveBeenCalledWith(rowBoat);
   });
 });
