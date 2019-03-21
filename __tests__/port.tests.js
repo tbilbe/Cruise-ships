@@ -21,7 +21,6 @@ describe('A port can be instantiated', () => {
   });
   test('littlePort has another ship there', () => {
     littlePort.addShip(tugBoat);
-    const ferry = jest.fn();
     littlePort.addShip(ferry);
     expect(littlePort.ships).toEqual([tugBoat, ferry]);
   });
