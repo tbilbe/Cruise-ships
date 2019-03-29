@@ -1,7 +1,8 @@
 # Cruise ships Repo :ship: :speedboat:
 
-The next installment from mcr.codes
 Further OOP - building cruise ships and stuff! 
+
+Lets make a front-end interface for this thing-a-ma-bob! :ship:
 
 ## :anchor: Testing Framwork :rowboat:
 
