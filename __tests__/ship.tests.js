@@ -1,9 +1,9 @@
 /* eslint-disable no-console */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
-const { Ship } = require('../src/ship.js');
-const { Port } = require('../src/port.js');
-const { Itinerary } = require('../src/itinerary.js');
+const Ship = require('../src/ship.js');
+const Port = require('../src/port.js');
+const Itinerary = require('../src/itinerary.js');
 
 describe('A ship', () => {
   let ship, port, itinerary, mockPort, mockCalais, rowBoat;

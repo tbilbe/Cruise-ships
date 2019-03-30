@@ -3,7 +3,7 @@
     this.ports = ports;
   }
   if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { Itinerary };
+    module.exports = Itinerary;
   } else {
     window.Itinerary = Itinerary;
   }

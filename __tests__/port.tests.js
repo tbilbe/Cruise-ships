@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
-const { Port } = require('../src/port.js');
+const Port = require('../src/port.js');
 
 
 describe('A port can be instantiated', () => {
