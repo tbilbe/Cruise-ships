@@ -5,6 +5,7 @@ body {
   height: 100%;
   background: #000;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -32,4 +33,15 @@ body {
   height: 64px;
   background-image: url('../images/ship.png');
   position: absolute;
+}
+#sail-button > button {
+  width: 700px;
+  height: 40px;
+  background-color: red;
+  font-family: 'Press Start 2P', cursive;
+  font-weight: 800;
+  color: aliceblue;
+  position: relative;
+  align-items: flex-end;
+  outline: none;  
 }

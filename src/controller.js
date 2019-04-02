@@ -14,6 +14,11 @@
       }, 1000);
     }
 
+    // is render ports doing more than one thing here?
+    /*
+    The act of rendering a port is one thing, but to acheive this
+    we have to do multiple 'things' ...?
+    */
     renderPorts(ports) {
       const portsElement = document.querySelector('#ports');
       portsElement.style.width = '0px';
