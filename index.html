@@ -26,13 +26,15 @@
   <script type="text/javascript" src="src/itinerary.js"></script>
   <script type="text/javascript" src="src/ship.js"></script>
   <script>
-    const start = new Controller();
     const intinerary = new Itinerary([
       new Port('Victoria Dock'),
       new Port('Calias'),
       new Port('Liverpool')
     ]);
     const cruise = new Ship(intinerary);
+
+    const start = new Controller(cruise);
+    
     start.renderPorts(intinerary.ports);
     start.renderShip(cruise);
   </script>
