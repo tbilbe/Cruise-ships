@@ -32,11 +32,9 @@
       new Port('Liverpool')
     ]);
     const cruise = new Ship(intinerary);
-
     const start = new Controller(cruise);
-    
     start.renderPorts(intinerary.ports);
-    start.renderShip(cruise);
+    start.renderShip();
   </script>
 </body>
 

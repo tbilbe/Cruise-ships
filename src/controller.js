@@ -46,9 +46,12 @@
 
     setSail() {
       const portIndex = this.ship.itinerary.ports.indexOf(this.ship.currentPort);
-      const nextPortElement = document.querySelector(`[data-port-index='${portIndex + 1}']`);
-      console.log(nextPortElement);
-      // return nextPortElement;
+      const nextPortIndex = portIndex + 1;
+      const nextPortElement = document.querySelector(`[data-port-index='${nextPortIndex}']`);
+      const shipElement = document.querySelector('#ship');
+      shipElement.style.left = `${nextPortElement.offsetLeft - 32}px`;
+      this.ship.setSail();
+      this.ship.dock();
     }
   }
   if (typeof module !== 'undefined' && module.exports) {
