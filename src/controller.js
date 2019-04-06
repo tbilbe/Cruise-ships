@@ -16,11 +16,6 @@
       }, 1000);
     }
 
-    // is render ports doing more than one thing here?
-    /*
-    The act of rendering a port is one thing, but to acheive this
-    we have to do multiple 'things' ...?
-    */
     renderPorts(ports) {
       const portsElement = document.querySelector('#ports');
       portsElement.style.width = '0px';
@@ -44,6 +39,15 @@
       shipElement.style.left = `${portEl.offsetLeft - 32}px`;
     }
 
+    renderMessage(message) {
+      const viewport = document.querySelector('#viewport');
+      const messageBox = document.createElement('div');
+      messageBox.setAttribute('id', 'message');
+      messageBox.innerHTML = message;
+      viewport.appendChild(messageBox);
+      window.setTimeout(() => viewport.removeChild(messageBox), 2000);
+    }
+
     setSail() {
       const ship = this.ship;
       const portIndex = ship.itinerary.ports.indexOf(ship.currentPort);
@@ -51,30 +55,27 @@
       const nextPortElement = document.querySelector(`[data-port-index='${nextPortIndex}']`);
       const shipElement = document.querySelector('#ship');
 
-      if (!nextPortElement) {
-        return alert('End of the line!');
-      }
-
       ship.setSail();
+
+      if (!nextPortElement) {
+        return this.renderMessage('You have finished sailing, please leave. Captains orders.');
+      }
+      const departMsg = `Now departing ${ship.previousPort.name}`;
+      this.renderMessage(departMsg);
+
       const sailInterval = setInterval(() => {
         const shipArrival = parseInt(shipElement.style.left, 10);
         if (shipArrival === nextPortElement.offsetLeft - 32) {
           clearInterval(sailInterval);
-          ship.dock();
         } else {
           shipElement.style.left = `${shipArrival + 1}px`;
         }
-      }, 15);
-    }
-
-    renderMessage(message) {
-      const viewport = document.querySelector('#viewport');
-      const messageBox = document.createElement('div');
-      messageBox.setAttribute('id', 'message');
-      messageBox.innerHTML = message;
-      viewport.appendChild(messageBox);
-
-      console.log('hook up');
+      }, 20);
+      ship.dock();
+      const arrivalMsg = `Now arriving at ${ship.currentPort.name}`;
+      window.setTimeout(() => {
+        this.renderMessage(arrivalMsg);
+      }, 2000);
     }
   }
   if (typeof module !== 'undefined' && module.exports) {

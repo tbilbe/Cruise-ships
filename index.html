@@ -31,11 +31,10 @@
       new Port('Calias'),
       new Port('Liverpool')
     ]);
-    const cruise = new Ship(intinerary);
-    const start = new Controller(cruise);
+    const ship = new Ship(intinerary);
+    const start = new Controller(ship);
     start.renderPorts(intinerary.ports);
     start.renderShip();
-    start.renderMessage();
   </script>
 </body>
 

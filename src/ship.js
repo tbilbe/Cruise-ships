@@ -10,7 +10,7 @@
 
     setSail() {
       this.previousPort = this.currentPort;
-      this.currentPort = null;
+      this.currentPort = '';
       this.previousPort.removeShip(this);
     }
 
