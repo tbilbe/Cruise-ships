@@ -3,7 +3,7 @@
     constructor(ship) {
       this.ship = ship;
       this.initialiseSea();
-      document.querySelector('button').addEventListener('click', () => this.setSail());
+      document.querySelector('#setSailButton').addEventListener('click', () => this.setSail());
     }
 
     initialiseSea() {
@@ -50,21 +50,31 @@
       const nextPortIndex = portIndex + 1;
       const nextPortElement = document.querySelector(`[data-port-index='${nextPortIndex}']`);
       const shipElement = document.querySelector('#ship');
-      console.log('next port element: ', nextPortElement);
+
       if (!nextPortElement) {
-        return alert('fin');
+        return alert('End of the line!');
       }
+
       ship.setSail();
-      console.log('ship.currentPort: ', ship.currentPort);
       const sailInterval = setInterval(() => {
         const shipArrival = parseInt(shipElement.style.left, 10);
         if (shipArrival === nextPortElement.offsetLeft - 32) {
           clearInterval(sailInterval);
-          this.ship.dock();
+          ship.dock();
         } else {
           shipElement.style.left = `${shipArrival + 1}px`;
         }
-      }, 1);
+      }, 15);
+    }
+
+    renderMessage(message) {
+      const viewport = document.querySelector('#viewport');
+      const messageBox = document.createElement('div');
+      messageBox.setAttribute('id', 'message');
+      messageBox.innerHTML = message;
+      viewport.appendChild(messageBox);
+
+      console.log('hook up');
     }
   }
   if (typeof module !== 'undefined' && module.exports) {
