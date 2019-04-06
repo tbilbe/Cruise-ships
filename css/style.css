@@ -60,3 +60,14 @@ body {
   font-size: 20px;
   background: #000;
 }
+#headsUpDisplay{
+  font-weight: 800;
+  z-index: 1000;
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  font-size: 15px;
+  color: #F75CD4;
+  font-family: 'Press Start 2P';
+  font-size: 20px;
+}

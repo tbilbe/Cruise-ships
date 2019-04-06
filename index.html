@@ -20,6 +20,14 @@
   <div id="sail-button">
     <button id="setSailButton" type="submit">Set Sail!</button>
   </div>
+  <div id="headsUpDisplay">
+    <br>
+    <div id="currentPort"></div>
+    <br>
+    <hr>
+    <br>
+    <div id="nextPort"></div>
+  </div>
 
   <script type="text/javascript" src="src/controller.js"></script>
   <script type="text/javascript" src="src/port.js"></script>
@@ -35,6 +43,7 @@
     const start = new Controller(ship);
     start.renderPorts(intinerary.ports);
     start.renderShip();
+    start.headUpDisplay();
   </script>
 </body>
 

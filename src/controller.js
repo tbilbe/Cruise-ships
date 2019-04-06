@@ -48,6 +48,20 @@
       window.setTimeout(() => viewport.removeChild(messageBox), 2000);
     }
 
+    headUpDisplay() {
+      const ship = this.ship;
+      const portIndex = ship.itinerary.ports.indexOf(ship.currentPort);
+      const nextPortIndex = portIndex + 1;
+      const currentHtml = document.getElementById('currentPort');
+      currentHtml.innerHTML = `Current Port: ${this.ship.itinerary.ports[portIndex].name}`;
+      const nextHtml = document.getElementById('nextPort');
+      if (nextPortIndex === ship.itinerary.ports.length) {
+        nextHtml.innerHTML = 'Call up home you\'ll need tea cooking';
+      } else {
+        nextHtml.innerHTML = `Chart course for: ${ship.itinerary.ports[nextPortIndex].name}`;
+      }
+    }
+
     setSail() {
       const ship = this.ship;
       const portIndex = ship.itinerary.ports.indexOf(ship.currentPort);
@@ -56,6 +70,7 @@
       const shipElement = document.querySelector('#ship');
 
       ship.setSail();
+
 
       if (!nextPortElement) {
         return this.renderMessage('You have finished sailing, please leave. Captains orders.');
@@ -76,6 +91,9 @@
       window.setTimeout(() => {
         this.renderMessage(arrivalMsg);
       }, 2000);
+      window.setTimeout(() => {
+        this.headUpDisplay();
+      }, 2500);
     }
   }
   if (typeof module !== 'undefined' && module.exports) {
