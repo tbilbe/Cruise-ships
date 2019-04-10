@@ -5,8 +5,12 @@ body {
   height: 100%;
   background: #000;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+#viewport::-webkit-scrollbar { 
+  display: none;
 }
 #viewport {
   width: 700px;
@@ -14,4 +18,56 @@ body {
   position: relative;
   overflow-x: auto;
   background-image: url('../images/water0.png');
+  color: aqua;
+}
+#ports {
+  width: 0px;
+  margin-top: 96px;
+  display: flex;
+  justify-content: space-around;
+}
+#ports > .port {
+  width: 64px;
+  height: 32px;
+  background-image: url('../images/port.png');
+}
+#ship {
+  width: 128px;
+  height: 64px;
+  background-image: url('../images/ship.png');
+  position: absolute;
+}
+#sail-button > button {
+  width: 700px;
+  height: 40px;
+  background-color: #DF2B05;
+  font-family: 'Press Start 2P', cursive;
+  font-weight: 800;
+  color: aliceblue;
+  position: relative;
+  align-items: flex-end;
+  outline: none;  
+}
+
+#message {
+  width: 100%;
+  padding: 16px;
+  bottom: 0;
+  position: absolute;
+  align-items: flex-end;
+  color: greenyellow;
+  font-family: 'Press Start 2P';
+  font-size: 20px;
+  background: #000;
+}
+#headsUpDisplay{
+  font-weight: 800;
+  z-index: 1000;
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  font-size: 15px;
+  color: #F75CD4;
+  font-family: 'Press Start 2P';
+  font-size: 20px;
 }

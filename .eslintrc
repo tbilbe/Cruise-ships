@@ -5,5 +5,9 @@
   },
   "extends": [
     "mcr-codes"
-  ]
+  ],
+  "env": {
+    "browser": true
+  }
+
 }

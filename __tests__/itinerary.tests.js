@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-const { Itinerary } = require('../src/itinerary.js');
+const Itinerary = require('../src/itinerary.js');
 
 describe('itinerary', () => {
   let port, port1, port2, ports, itinerary;
